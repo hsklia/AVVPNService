@@ -20,13 +20,15 @@ public class AVVPNCredentials {
     let server: String
     let username: String
     let password: String
+    let killSwitch : Bool
 
-    private init(_ type: AVVPNType, title: String, server: String, username: String, password: String) {
+    private init(_ type: AVVPNType, title: String, server: String, username: String, password: String, killSwitch: Bool) {
         self.type = type
         self.title = title
         self.server = server
         self.username = username
         self.password = password
+        self.killSwitch = killSwitch
     }
 
     public class IPSec: AVVPNCredentials {
@@ -34,7 +36,7 @@ public class AVVPNCredentials {
 
         public init(title: String = "AVVPNService", server: String, username: String, password: String, shared: String) {
             self.shared = shared
-            super.init(.ipsec, title: title, server: server, username: username, password: password)
+            super.init(.ipsec, title: title, server: server, username: username, password: password, killSwitch: killSwitch)
         }
     }
 
@@ -42,10 +44,10 @@ public class AVVPNCredentials {
         let remoteId: String
         let localId: String
 
-        public init(title: String = "AVVPNService", server: String, username: String, password: String, remoteId: String, localId: String) {
+        public init(title: String = "AVVPNService", server: String, username: String, password: String, remoteId: String, localId: String, killSwitch : Bool) {
             self.remoteId = remoteId
             self.localId = localId
-            super.init(.ike2, title: title, server: server, username: username, password: password)
+            super.init(.ike2, title: title, server: server, username: username, password: password, killSwitch: killSwitch)
         }
     }
 }

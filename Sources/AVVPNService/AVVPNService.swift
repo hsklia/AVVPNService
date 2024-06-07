@@ -78,6 +78,7 @@ private extension AVVPNService {
         configuration.passwordReference = keychain.load(key: AVVPNKeychainService.passwordKey)
         configuration.useExtendedAuthentication = true
         configuration.disconnectOnSleep = false
+        configuration.includeAllNetworks = credentials.killSwitch
         return configuration
     }
 
@@ -93,6 +94,7 @@ private extension AVVPNService {
         configuration.passwordReference = keychain.load(key: AVVPNKeychainService.passwordKey)
         configuration.useExtendedAuthentication = true
         configuration.disconnectOnSleep = false
+        configuration.includeAllNetworks = credentials.killSwitch
         return configuration
     }
 }
