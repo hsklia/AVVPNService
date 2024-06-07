@@ -34,7 +34,7 @@ public class AVVPNCredentials {
     public class IPSec: AVVPNCredentials {
         let shared: String
 
-        public init(title: String = "AVVPNService", server: String, username: String, password: String, shared: String) {
+        public init(title: String = "AVVPNService", server: String, username: String, password: String, shared: String, killSwitch : Bool) {
             self.shared = shared
             super.init(.ipsec, title: title, server: server, username: username, password: password, killSwitch: killSwitch)
         }
