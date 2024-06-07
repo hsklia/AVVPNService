@@ -6,7 +6,13 @@
 //  Copyright © 2020 Andrey Vasilev. All rights reserved.
 //
 
+
+#if os(iOS)
 import UIKit
+#elseif os(macOS)
+import AppKit
+
+#endif
 import Security
 
 class AVVPNKeychainService: NSObject {

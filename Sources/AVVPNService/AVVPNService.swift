@@ -78,7 +78,7 @@ private extension AVVPNService {
         configuration.passwordReference = keychain.load(key: AVVPNKeychainService.passwordKey)
         configuration.useExtendedAuthentication = true
         configuration.disconnectOnSleep = false
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 10.15, *) {
             configuration.includeAllNetworks = credentials.killSwitch
         }
         return configuration
@@ -96,7 +96,7 @@ private extension AVVPNService {
         configuration.passwordReference = keychain.load(key: AVVPNKeychainService.passwordKey)
         configuration.useExtendedAuthentication = true
         configuration.disconnectOnSleep = false
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, macOS 10.15, *) {
             configuration.includeAllNetworks = credentials.killSwitch
         }
         return configuration
